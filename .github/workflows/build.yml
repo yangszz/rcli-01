@@ -1,17 +1,11 @@
 name: build
 
 on:
+  # 每当 push 到 master 分支时触发部署
   push:
-    branches:
-      - master
-    tags:
-      - v*
-  pull_request:
-    branches:
-      - master
-
-permissions:
-  contents: write
+    branches: [master]
+  # 手动触发部署
+  workflow_dispatch:
 
 jobs:
   build-rust:
